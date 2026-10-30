@@ -98,19 +98,16 @@
     .intro-inner p { margin: 0; color: var(--muted); font-size: .88rem; }
     .intro-inner strong { color: var(--accent-light); font: 700 .85rem "Manrope", sans-serif; letter-spacing: .12em; }
     .work-section { background: var(--bg); }
-    .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
-    .work-card { position: relative; min-height: 360px; overflow: hidden; background: var(--surface); }
-    .work-card img { height: 100%; min-height: 360px; object-fit: cover; transition: transform .7s ease; filter: brightness(.76); }
-    .work-card:hover img { transform: scale(1.055); filter: brightness(.55); }
-    .work-card::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.9)); pointer-events: none; }
-    .work-info { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 25px; }
-    .work-info small { color: var(--accent-light); letter-spacing: .16em; text-transform: uppercase; font-size: .68rem; font-weight: 700; }
-    .work-info h3 { margin: 7px 0 0; font: 700 clamp(1.4rem, 3vw, 2rem) "Manrope", sans-serif; }
-    .work-play {
-      position: absolute; z-index: 2; top: 24px; right: 24px; width: 48px; height: 48px;
-      display: grid; place-items: center; border: 1px solid rgba(255,255,255,.7);
-      border-radius: 50%; background: rgba(0,0,0,.2); font-size: .9rem;
-    }
+    .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 28px; align-items: start; }
+    .video-card { min-width: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
+    .video-frame { display: block; width: 100%; border: 0; background: #050607; }
+    .video-frame.instagram { aspect-ratio: 9 / 16; }
+    .video-frame.youtube { aspect-ratio: 16 / 9; }
+    .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .video-info { padding: 20px 22px 22px; }
+    .video-info small { color: var(--accent-light); letter-spacing: .16em; text-transform: uppercase; font-size: .68rem; font-weight: 700; }
+    .video-info h3 { margin: 7px 0 0; font: 700 1.25rem "Manrope", sans-serif; }
+    .video-info a { display: inline-block; margin-top: 12px; color: var(--muted); font-size: .78rem; text-decoration: underline; text-underline-offset: 4px; }
     .work-footnote { margin-top: 22px; color: var(--muted); font-size: .8rem; }
     .services-section { background: #0e1013; }
     .services-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -168,7 +165,7 @@
       .intro-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
       .section { padding: 82px 0; }
       .work-grid, .services-grid, .about-grid { grid-template-columns: 1fr; }
-      .work-card, .work-card img { min-height: 300px; }
+      .work-grid { grid-template-columns: 1fr; }
       .services-grid { border-bottom: 0; }
       .service, .service + .service { padding: 28px 0; border-left: 0; border-bottom: 1px solid var(--line); }
       .about-grid { gap: 48px; }
@@ -228,30 +225,38 @@
           <p>A selection of visual work across brands, music, events and people. Replace these sample images and project links with your own finished videos.</p>
         </div>
         <div class="work-grid">
-          <!-- Replace each image URL with a still/frame from your own project.
-               Replace each # with the public video link (YouTube, Vimeo, Instagram, etc.). -->
-          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open brand film project">
-            <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1200&q=85" alt="Camera filming a production" />
-            <span class="work-play">↗</span>
-            <div class="work-info"><small>01 / Brand film</small><h3>Stories for brands</h3></div>
-          </a>
-          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open music video project">
-            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=85" alt="Live music performance" />
-            <span class="work-play">↗</span>
-            <div class="work-info"><small>02 / Music & performance</small><h3>Sound in motion</h3></div>
-          </a>
-          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open event coverage project">
-            <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1200&q=85" alt="Event audience and stage lights" />
-            <span class="work-play">↗</span>
-            <div class="work-info"><small>03 / Event coverage</small><h3>Moments that matter</h3></div>
-          </a>
-          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open creative video project">
-            <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=85" alt="Video production camera setup" />
-            <span class="work-play">↗</span>
-            <div class="work-info"><small>04 / Creative visuals</small><h3>Made to be remembered</h3></div>
-          </a>
+          <article class="video-card">
+            <div class="video-frame instagram">
+              <iframe src="https://www.instagram.com/reel/DbsLCVltPkM/embed" title="3Ger_films Instagram Reel 1" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="video-info"><small>01 / Instagram Reel</small><h3>Featured Visual 01</h3><a href="https://www.instagram.com/reel/DbsLCVltPkM/" target="_blank" rel="noopener">Open on Instagram ↗</a></div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame instagram">
+              <iframe src="https://www.instagram.com/reel/DNJN25rIbPx/embed" title="3Ger_films Instagram Reel 2" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="video-info"><small>02 / Instagram Reel</small><h3>Featured Visual 02</h3><a href="https://www.instagram.com/reel/DNJN25rIbPx/" target="_blank" rel="noopener">Open on Instagram ↗</a></div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame instagram">
+              <iframe src="https://www.instagram.com/reel/DXKOvb1jL3l/embed" title="3Ger_films Instagram Reel 3" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="video-info"><small>03 / Instagram Reel</small><h3>Featured Visual 03</h3><a href="https://www.instagram.com/reel/DXKOvb1jL3l/" target="_blank" rel="noopener">Open on Instagram ↗</a></div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame instagram">
+              <iframe src="https://www.instagram.com/reel/DEo_hDCIUkW/embed" title="3Ger_films Instagram Reel 4" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="video-info"><small>04 / Instagram Reel</small><h3>Featured Visual 04</h3><a href="https://www.instagram.com/reel/DEo_hDCIUkW/" target="_blank" rel="noopener">Open on Instagram ↗</a></div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame youtube">
+              <iframe src="https://www.youtube-nocookie.com/embed/yikugEPOPN8" title="3Ger_films YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info"><small>05 / YouTube Feature</small><h3>Featured Film 05</h3><a href="https://youtu.be/yikugEPOPN8" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+          </article>
         </div>
-        <p class="work-footnote">Portfolio note: the project names and images above are sample placeholders, not claims of completed client work.</p>
+        <p class="work-footnote">Five videos are currently featured. Instagram playback depends on Instagram allowing embeds for each Reel; use the “Open on Instagram” link if an embed does not load.</p>
       </div>
     </section>
 
