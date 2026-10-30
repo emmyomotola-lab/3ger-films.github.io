@@ -1,942 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3ger_films| Videographer</title>
-    <meta
-      name="description"
-      content="Portfolio website for a professional videographer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --bg: #0d0d0f;
-        --panel: #15171b;
-        --panel-2: #1b1f24;
-        --text: #f5f5f5;
-        --muted: #b0b5be;
-        --accent: #ff7a18;
-        --accent-2: #ffc857;
-        --line: rgba(255,255,255,0.08);
-        --shadow: rgba(0, 0, 0, 0.3);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Inter", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .container {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-      }
-
-      .section {
-        padding: 96px 0;
-      }
-
-      .section-title {
-        font-size: clamp(2rem, 3vw, 3rem);
-        line-height: 1.1;
-        margin: 0 0 14px;
-        font-weight: 800;
-      }
-
-      .section-subtitle {
-        color: var(--muted);
-        max-width: 600px;
-        margin: 0 auto 44px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 22px;
-        border-radius: 999px;
-        font-weight: 600;
-        transition: 0.2s ease;
-        cursor: pointer;
-        border: 1px solid transparent;
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #111;
-        box-shadow: 0 20px 30px rgba(255, 122, 24, 0.25);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn-secondary {
-        background: transparent;
-        border-color: var(--line);
-        color: var(--text);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(255,255,255,0.04);
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        backdrop-filter: blur(18px);
-        background: rgba(13, 13, 15, 0.7);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 72px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .brand-mark {
-        width: 34px;
-        height: 34px;
-        border-radius: 10px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #111;
-        font-weight: 800;
-      }
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090a0c" />
+  <meta name="description" content="3Ger_films — cinematic videography, creative direction and video editing." />
+  <title>3Ger_films | Cinematic Visual Stories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #090a0c;
+      --surface: #111317;
+      --surface-2: #171a20;
+      --text: #f4f4f1;
+      --muted: #a2a6ad;
+      --accent: #d6a45b;
+      --accent-light: #f0c987;
+      --line: rgba(255,255,255,.11);
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: "DM Sans", sans-serif; line-height: 1.65;
+    }
+    body, button, input, textarea { font-family: "DM Sans", sans-serif; }
+    img { display: block; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--accent-light); font-size: .73rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--accent); }
+    .section { padding: 112px 0; }
+    .section-heading { max-width: 680px; margin-bottom: 48px; }
+    .section-heading h2 {
+      font: 800 clamp(2.4rem, 5vw, 4.5rem)/1.02 "Manrope", sans-serif;
+      letter-spacing: -.06em; margin: 16px 0;
+    }
+    .section-heading p { color: var(--muted); max-width: 560px; margin: 0; }
+    .accent { color: var(--accent-light); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 23px; border: 1px solid transparent;
+      font-size: .82rem; font-weight: 700; letter-spacing: .04em;
+      text-transform: uppercase; transition: .25s ease; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #111; }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-3px); }
+    .btn-outline { border-color: rgba(255,255,255,.35); background: transparent; }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent-light); }
+    header {
+      position: absolute; z-index: 20; top: 0; left: 0; width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .nav { min-height: 86px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font: 800 1.08rem "Manrope", sans-serif; letter-spacing: .04em; }
+    .brand-mark {
+      width: 38px; height: 38px; display: grid; place-items: center;
+      border: 1px solid var(--accent); color: var(--accent-light);
+      font: 800 .92rem "Manrope", sans-serif; transform: rotate(-8deg);
+    }
+    .brand-name span { color: var(--accent-light); }
+    .nav-links { display: flex; align-items: center; gap: 32px; color: #d4d5d7; font-size: .82rem; }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--accent-light); }
+    .menu-toggle { display: none; background: none; border: 0; font-size: 1.7rem; cursor: pointer; }
+    .hero {
+      min-height: 790px; display: flex; align-items: center; position: relative; overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(7,8,10,.96) 0%, rgba(7,8,10,.83) 44%, rgba(7,8,10,.22) 100%),
+        linear-gradient(0deg, rgba(7,8,10,.9), transparent 35%),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=88") center/cover;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(circle at 78% 45%, transparent 0 18%, rgba(0,0,0,.2) 60%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; padding: 150px 0 100px; }
+    .hero h1 {
+      font: 800 clamp(3.5rem, 8.5vw, 7.7rem)/.94 "Manrope", sans-serif;
+      letter-spacing: -.075em; margin: 24px 0;
+    }
+    .hero h1 span { color: var(--accent-light); }
+    .hero-copy { color: #c1c3c7; max-width: 540px; font-size: 1.08rem; margin: 0 0 32px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-note { margin-top: 70px; color: #a9abb0; font-size: .73rem; letter-spacing: .16em; text-transform: uppercase; }
+    .hero-note strong { color: var(--text); font-weight: 600; }
+    .intro-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #0d0f12; }
+    .intro-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 25px 0; }
+    .intro-inner p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .intro-inner strong { color: var(--accent-light); font: 700 .85rem "Manrope", sans-serif; letter-spacing: .12em; }
+    .work-section { background: var(--bg); }
+    .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+    .work-card { position: relative; min-height: 360px; overflow: hidden; background: var(--surface); }
+    .work-card img { height: 100%; min-height: 360px; object-fit: cover; transition: transform .7s ease; filter: brightness(.76); }
+    .work-card:hover img { transform: scale(1.055); filter: brightness(.55); }
+    .work-card::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.9)); pointer-events: none; }
+    .work-info { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 25px; }
+    .work-info small { color: var(--accent-light); letter-spacing: .16em; text-transform: uppercase; font-size: .68rem; font-weight: 700; }
+    .work-info h3 { margin: 7px 0 0; font: 700 clamp(1.4rem, 3vw, 2rem) "Manrope", sans-serif; }
+    .work-play {
+      position: absolute; z-index: 2; top: 24px; right: 24px; width: 48px; height: 48px;
+      display: grid; place-items: center; border: 1px solid rgba(255,255,255,.7);
+      border-radius: 50%; background: rgba(0,0,0,.2); font-size: .9rem;
+    }
+    .work-footnote { margin-top: 22px; color: var(--muted); font-size: .8rem; }
+    .services-section { background: #0e1013; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .service { padding: 34px 28px 38px 0; }
+    .service + .service { border-left: 1px solid var(--line); padding-left: 28px; }
+    .service-number { color: var(--accent); font: 700 .78rem "Manrope", sans-serif; letter-spacing: .12em; }
+    .service h3 { font: 700 1.35rem "Manrope", sans-serif; margin: 22px 0 12px; }
+    .service p { color: var(--muted); font-size: .91rem; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: center; }
+    .about-photo { position: relative; max-width: 460px; }
+    .about-photo img { aspect-ratio: 4/5; object-fit: cover; filter: grayscale(25%); }
+    .about-photo::before { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--accent); z-index: -1; }
+    .about-copy h2 { font: 800 clamp(2.5rem, 5vw, 4.6rem)/1.02 "Manrope", sans-serif; letter-spacing: -.065em; margin: 17px 0 22px; }
+    .about-copy p { color: var(--muted); }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .about-tags span { border: 1px solid var(--line); padding: 9px 13px; color: #d5d6d8; font-size: .75rem; }
+    .contact-section { background: #111317; }
+    .contact-panel { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; padding: 54px; border: 1px solid rgba(214,164,91,.38); background: linear-gradient(120deg, rgba(214,164,91,.1), rgba(255,255,255,.015)); }
+    .contact-panel h2 { font: 800 clamp(2.4rem, 5vw, 4.5rem)/1 "Manrope", sans-serif; letter-spacing: -.06em; margin: 14px 0; max-width: 650px; }
+    .contact-panel p { color: var(--muted); margin: 0; }
+    .contact-details { display: flex; flex-wrap: wrap; gap: 18px 30px; margin-top: 28px; color: #d4d5d7; font-size: .86rem; }
+    .contact-details span { color: var(--accent-light); margin-right: 8px; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .footer-brand { color: var(--text); font: 800 .95rem "Manrope", sans-serif; letter-spacing: .05em; }
+    .footer-brand span { color: var(--accent-light); }
+    .whatsapp-float {
+      position: fixed; z-index: 30; right: 22px; bottom: 22px; width: 58px; height: 58px;
+      display: grid; place-items: center; border-radius: 50%; background: #20c66b; color: #06170d;
+      box-shadow: 0 8px 30px rgba(0,0,0,.4); font-size: 1.55rem; font-weight: 800;
+      transition: transform .2s;
+    }
+    .whatsapp-float:hover { transform: translateY(-4px) scale(1.04); }
+    @media (max-width: 850px) {
+      .nav-links { gap: 18px; }
+      .hero { min-height: 700px; background-position: 58% center; }
+      .about-grid { gap: 42px; }
+      .contact-panel { grid-template-columns: 1fr; padding: 38px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(var(--max), calc(100% - 34px)); }
+      .nav { min-height: 72px; }
+      .menu-toggle { display: block; }
       .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        color: var(--muted);
-        font-size: 0.96rem;
+        display: none; position: absolute; top: 72px; left: 17px; right: 17px;
+        padding: 22px; background: #111317; border: 1px solid var(--line);
+        flex-direction: column; align-items: flex-start; gap: 18px;
       }
-
-      .nav-links a:hover {
-        color: var(--text);
-      }
-
-      .nav-cta {
-        margin-left: 10px;
-      }
-
-      .menu-toggle {
-        display: none;
-        background: transparent;
-        border: none;
-        color: var(--text);
-        font-size: 1.7rem;
-        cursor: pointer;
-      }
-
-      .hero {
-        padding: 70px 0 56px;
-      }
-
-      .hero-inner {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 36px;
-        align-items: center;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: var(--muted);
-        font-size: 0.82rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .eyebrow::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 18px rgba(255, 122, 24, 0.8);
-      }
-
-      h1 {
-        font-size: clamp(3rem, 6vw, 5.2rem);
-        line-height: 0.96;
-        letter-spacing: -0.05em;
-        margin: 18px 0 20px;
-      }
-
-      .hero-text p {
-        max-width: 560px;
-        color: var(--muted);
-        font-size: 1.08rem;
-        margin-bottom: 30px;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-bottom: 32px;
-      }
-
-      .stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 26px;
-      }
-
-      .stat {
-        min-width: 120px;
-      }
-
-      .stat strong {
-        display: block;
-        font-size: 2rem;
-        font-weight: 800;
-        letter-spacing: -0.05em;
-      }
-
-      .stat span {
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      .hero-visual {
-        position: relative;
-        min-height: 620px;
-      }
-
-      .photo-card {
-        position: absolute;
-        border-radius: 28px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        border: 1px solid var(--line);
-      }
-
-      .photo-main {
-        inset: 0 0 80px 60px;
-      }
-
-      .photo-main img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .photo-badge {
-        right: 0;
-        bottom: 40px;
-        background: rgba(18, 20, 24, 0.78);
-        border: 1px solid var(--line);
-        backdrop-filter: blur(10px);
-        padding: 22px 20px;
-        border-radius: 22px;
-        width: min(280px, 80%);
-      }
-
-      .badge-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: var(--muted);
-        margin-bottom: 8px;
-        font-size: 0.8rem;
-      }
-
-      .badge-score {
-        font-size: 2.1rem;
-        font-weight: 800;
-        letter-spacing: -0.05em;
-      }
-
-      .badge-label {
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      .featured-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 26px;
-      }
-
-      .project-card {
-        background: linear-gradient(180deg, #191d22, #111417);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        overflow: hidden;
-        transition: transform 0.25s ease, border-color 0.25s ease;
-      }
-
-      .project-card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(255, 122, 24, 0.4);
-      }
-
-      .project-card img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-      }
-
-      .project-body {
-        padding: 20px 20px 24px;
-      }
-
-      .project-meta {
-        display: flex;
-        justify-content: space-between;
-        color: var(--muted);
-        font-size: 0.8rem;
-        margin-bottom: 8px;
-      }
-
-      .project-card h3 {
-        margin: 0;
-        font-size: 1.4rem;
-      }
-
-      .services {
-        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      .service-card {
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 28px;
-      }
-
-      .service-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 16px;
-        display: grid;
-        place-items: center;
-        font-size: 1.4rem;
-        background: linear-gradient(135deg, rgba(255,122,24,0.2), rgba(255,200,87,0.18));
-        border: 1px solid rgba(255,122,24,0.24);
-        margin-bottom: 18px;
-      }
-
-      .service-card h3 {
-        margin: 0 0 10px;
-        font-size: 1.4rem;
-      }
-
-      .service-card p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .about {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 36px;
-        align-items: center;
-      }
-
-      .about-image {
-        border-radius: 28px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-      }
-
-      .about-image img {
-        width: 100%;
-        height: 680px;
-        object-fit: cover;
-      }
-
-      .about-copy p {
-        color: var(--muted);
-        font-size: 1.05rem;
-      }
-
-      .about-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 30px;
-      }
-
-      .about-item {
-        padding: 18px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: rgba(255,255,255,0.02);
-      }
-
-      .about-item strong {
-        display: block;
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-      }
-
-      .about-item span {
-        color: var(--muted);
-      }
-
-      .testimonial-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      .quote-card {
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 26px;
-      }
-
-      .quote-card p {
-        color: var(--text);
-        margin: 0 0 20px;
-        font-size: 1.02rem;
-      }
-
-      .client {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .client-avatar {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #111;
-        display: grid;
-        place-items: center;
-        font-weight: 800;
-      }
-
-      .client strong {
-        display: block;
-      }
-
-      .client span {
-        color: var(--muted);
-        font-size: 0.86rem;
-      }
-
-      .contact-wrap {
-        background: linear-gradient(135deg, rgba(255,122,24,0.12), rgba(255,200,87,0.08));
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 36px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .contact-wrap h3 {
-        margin: 0 0 6px;
-        font-size: clamp(2rem, 3vw, 2.8rem);
-      }
-
-      .contact-wrap p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      footer {
-        padding: 26px 0 42px;
-        color: var(--muted);
-        border-top: 1px solid var(--line);
-      }
-
-      .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-      }
-
-      form {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      input, textarea {
-        width: 100%;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 14px 16px;
-        color: var(--text);
-        font: inherit;
-      }
-
-      textarea {
-        min-height: 140px;
-        resize: vertical;
-      }
-
-      .contact-form {
-        display: grid;
-        gap: 18px;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-      }
-
-      @media (max-width: 920px) {
-        .hero-inner,
-        .about,
-        .contact-wrap {
-          grid-template-columns: 1fr;
-        }
-
-        .featured-grid,
-        .services-grid,
-        .testimonial-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .nav-links {
-          position: absolute;
-          left: 16px;
-          right: 16px;
-          top: 74px;
-          background: rgba(16, 18, 21, 0.98);
-          border: 1px solid var(--line);
-          border-radius: 18px;
-          padding: 16px;
-          display: none;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .nav-links.open {
-          display: flex;
-        }
-
-        .menu-toggle {
-          display: block;
-        }
-
-        .nav-cta {
-          display: none;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .featured-grid,
-        .services-grid,
-        .testimonial-grid,
-        .form-row {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-visual {
-          min-height: 440px;
-        }
-
-        .about-image img {
-          height: 460px;
-        }
-
-        .section {
-          padding: 78px 0;
-        }
-
-        .footer-inner {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container nav">
-        <a href="#top" class="brand" aria-label="Nova Frame home">
-          <span class="brand-mark">N</span>
-          <span>Nova Frame</span>
-        </a>
-
-        <nav class="nav-links" id="navLinks">
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a href="#contact" class="btn btn-primary nav-cta">Book a shoot</a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-          ☰
-        </button>
+      .nav-links.open { display: flex; }
+      .nav .nav-book { display: none; }
+      .hero { min-height: 690px; background-position: 62% center; }
+      .hero-content { padding: 130px 0 70px; }
+      .hero h1 { font-size: clamp(3.35rem, 16vw, 5.8rem); }
+      .hero-note { margin-top: 50px; }
+      .intro-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .section { padding: 82px 0; }
+      .work-grid, .services-grid, .about-grid { grid-template-columns: 1fr; }
+      .work-card, .work-card img { min-height: 300px; }
+      .services-grid { border-bottom: 0; }
+      .service, .service + .service { padding: 28px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+      .about-grid { gap: 48px; }
+      .about-photo { max-width: calc(100% - 16px); margin-right: 16px; }
+      .contact-panel { padding: 28px 22px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- WhatsApp contact is configured from the number listed on your Linktree. -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="3Ger Films home">
+        <span class="brand-mark">3G</span>
+        <span class="brand-name">3Ger<span>_films</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#work">Selected work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary nav-book" href="https://wa.me/2349067689462?text=Hello%203Ger_films%2C%20I%27d%20like%20to%20make%20an%20enquiry.">Book a project ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Videography · Editing · Visual storytelling</span>
+          <h1>Every frame.<br /><span>A feeling.</span></h1>
+          <p class="hero-copy">We turn moments, people and ideas into cinematic visual stories. From the first shot to the final edit, every detail is created with purpose.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">Explore the work ↗</a>
+            <a class="btn btn-outline" href="#contact">Start a project</a>
+          </div>
+          <div class="hero-note"><strong>3Ger_films</strong> &nbsp; / &nbsp; Creating visuals that stay with you</div>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-text">
-            <span class="eyebrow">Available for commissions</span>
-            <h1>Stories captured in motion.</h1>
-            <p>
-              I create cinematic video content for brands, weddings, and
-              personal stories—helping your vision feel immersive, emotional,
-              and unforgettable.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#work" class="btn btn-primary">View portfolio</a>
-              <a href="#contact" class="btn btn-secondary">Let’s talk</a>
-            </div>
-
-            <div class="stats">
-              <div class="stat">
-                <strong>8+</strong>
-                <span>Years filming</span>
-              </div>
-              <div class="stat">
-                <strong>120</strong>
-                <span>Projects shot</span>
-              </div>
-              <div class="stat">
-                <strong>4.9/5</strong>
-                <span>Average rating</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-visual">
-            <div class="photo-card photo-main">
-              <img
-                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80"
-                alt="Videographer filming"
-              />
-            </div>
-
-            <div class="photo-card photo-badge">
-              <div class="badge-top">
-                <span>Featured reel</span>
-                <span>2026</span>
-              </div>
-              <div class="badge-score">12k</div>
-              <div class="badge-label">Views across campaign edits</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="section">
-        <div class="container">
-          <div style="text-align: center;">
-            <h2 class="section-title">Selected work</h2>
-            <p class="section-subtitle">
-              From intimate storytelling to commercial motion pieces, each frame
-              is designed to leave a lasting impression.
-            </p>
-          </div>
-
-          <div class="featured-grid">
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
-                alt="Wedding film project"
-              />
-              <div class="project-body">
-                <div class="project-meta">
-                  <span>Wedding film</span>
-                  <span>03 min</span>
-                </div>
-                <h3>Forever in Frame</h3>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
-                alt="Commercial campaign project"
-              />
-              <div class="project-body">
-                <div class="project-meta">
-                  <span>Commercial</span>
-                  <span>45 sec</span>
-                </div>
-                <h3>Motion for Brands</h3>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
-                alt="Documentary storytelling project"
-              />
-              <div class="project-body">
-                <div class="project-meta">
-                  <span>Documentary</span>
-                  <span>08 min</span>
-                </div>
-                <h3>City & Memory</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="section services">
-        <div class="container">
-          <div style="text-align: center;">
-            <h2 class="section-title">What I do</h2>
-            <p class="section-subtitle">
-              Thoughtful production and post-production for projects that need
-              emotion, clarity, and visual momentum.
-            </p>
-          </div>
-
-          <div class="services-grid">
-            <article class="service-card">
-              <div class="service-icon">🎬</div>
-              <h3>Commercial Videography</h3>
-              <p>
-                High-impact video content for brands that want polished visuals
-                with a cinematic edge.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-icon">✨</div>
-              <h3>Wedding Coverage</h3>
-              <p>
-                Story-driven films that preserve the atmosphere, movement, and
-                emotion of your most meaningful day.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-icon">📽️</div>
-              <h3>Event Highlights</h3>
-              <p>
-                Fast, vibrant highlights for launches, festivals, conferences,
-                and live experiences.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="container about">
-          <div class="about-image">
-            <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
-              alt="Videographer portrait"
-            />
-          </div>
-
-          <div class="about-copy">
-            <h2 class="section-title">I tell stories through light and movement.</h2>
-            <p>
-              I’m a videographer focused on honest, beautifully composed visual
-              storytelling. My work combines cinematic framing, natural motion,
-              and clean post-production to create pieces that feel both modern
-              and personal.
-            </p>
-            <p>
-              Whether it’s a brand story, a wedding film, or a live event, I
-              aim to capture what feels real—and make it unforgettable.
-            </p>
-
-            <div class="about-list">
-              <div class="about-item">
-                <strong>Based in</strong>
-                <span>London / Remote worldwide</span>
-              </div>
-              <div class="about-item">
-                <strong>Specialty</strong>
-                <span>Story-driven cinematic video</span>
-              </div>
-              <div class="about-item">
-                <strong>Clients</strong>
-                <span>Brands, couples, creators</span>
-              </div>
-              <div class="about-item">
-                <strong>Style</strong>
-                <span>Editorial, intimate, modern</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="testimonials" class="section">
-        <div class="container">
-          <div style="text-align: center;">
-            <h2 class="section-title">Client feedback</h2>
-            <p class="section-subtitle">
-              Trusted by people and brands who wanted something genuine, elevated,
-              and memorable.
-            </p>
-          </div>
-
-          <div class="testimonial-grid">
-            <article class="quote-card">
-              <p>
-                “The final film felt like our story, not just a highlight reel.
-                Every detail was beautifully considered.”
-              </p>
-              <div class="client">
-                <div class="client-avatar">A</div>
-                <div>
-                  <strong>Alicia & Mark</strong>
-                  <span>Wedding clients</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="quote-card">
-              <p>
-                “Our campaign looked premium, cinematic, and polished from the
-                first frame to the final edit. Highly recommended.”
-              </p>
-              <div class="client">
-                <div class="client-avatar">L</div>
-                <div>
-                  <strong>Leah Hart</strong>
-                  <span>Creative director</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="quote-card">
-              <p>
-                “We needed a fast, visually strong recap for our event and the
-                result exceeded our expectations by a mile.”
-              </p>
-              <div class="client">
-                <div class="client-avatar">S</div>
-                <div>
-                  <strong>Simon Reed</strong>
-                  <span>Event producer</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="container">
-          <div class="contact-wrap">
-            <div>
-              <h3>Let’s make something unforgettable.</h3>
-              <p>
-                Tell me about your idea, event, brand, or story. I’d love to hear
-                what you’re creating.
-              </p>
-            </div>
-
-            <a href="mailto:hello@novaframe.studio" class="btn btn-primary">hello@novaframe.studio</a>
-          </div>
-
-          <div style="margin-top: 48px; max-width: 760px; margin-inline: auto;">
-            <form class="contact-form">
-              <div class="form-row">
-                <input type="text" placeholder="Your name" aria-label="Your name" />
-                <input type="email" placeholder="Your email" aria-label="Your email" />
-              </div>
-              <input type="text" placeholder="Project type" aria-label="Project type" />
-              <textarea placeholder="Tell me about your project..." aria-label="Project details"></textarea>
-              <button type="submit" class="btn btn-primary" style="width: fit-content;">Send inquiry</button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-inner">
-        <div>© 2026 Nova Frame</div>
-        <div>Videographer • Cinematic storytelling</div>
+    <div class="intro-strip">
+      <div class="container intro-inner">
+        <strong>VISUALS WITH INTENTION</strong>
+        <p>Creative direction · Production · Post-production</p>
       </div>
-    </footer>
+    </div>
 
-    <script>
-      const menuToggle = document.getElementById("menuToggle");
-      const navLinks = document.getElementById("navLinks");
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">The portfolio</span>
+          <h2>Selected <span class="accent">visual stories.</span></h2>
+          <p>A selection of visual work across brands, music, events and people. Replace these sample images and project links with your own finished videos.</p>
+        </div>
+        <div class="work-grid">
+          <!-- Replace each image URL with a still/frame from your own project.
+               Replace each # with the public video link (YouTube, Vimeo, Instagram, etc.). -->
+          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open brand film project">
+            <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1200&q=85" alt="Camera filming a production" />
+            <span class="work-play">↗</span>
+            <div class="work-info"><small>01 / Brand film</small><h3>Stories for brands</h3></div>
+          </a>
+          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open music video project">
+            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=85" alt="Live music performance" />
+            <span class="work-play">↗</span>
+            <div class="work-info"><small>02 / Music & performance</small><h3>Sound in motion</h3></div>
+          </a>
+          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open event coverage project">
+            <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1200&q=85" alt="Event audience and stage lights" />
+            <span class="work-play">↗</span>
+            <div class="work-info"><small>03 / Event coverage</small><h3>Moments that matter</h3></div>
+          </a>
+          <a class="work-card" href="#" target="_blank" rel="noopener" aria-label="Open creative video project">
+            <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=85" alt="Video production camera setup" />
+            <span class="work-play">↗</span>
+            <div class="work-info"><small>04 / Creative visuals</small><h3>Made to be remembered</h3></div>
+          </a>
+        </div>
+        <p class="work-footnote">Portfolio note: the project names and images above are sample placeholders, not claims of completed client work.</p>
+      </div>
+    </section>
 
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What we do</span>
+          <h2>From concept<br />to <span class="accent">final cut.</span></h2>
+          <p>Flexible video services to help artists, businesses and individuals communicate with clarity and style.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service">
+            <span class="service-number">01 / PRODUCTION</span>
+            <h3>Videography</h3>
+            <p>Professional video coverage for brand campaigns, events, music performances, interviews and personal projects.</p>
+          </article>
+          <article class="service">
+            <span class="service-number">02 / POST-PRODUCTION</span>
+            <h3>Video Editing</h3>
+            <p>Clean storytelling through thoughtful cuts, pacing, sound, transitions and colour grading for digital platforms.</p>
+          </article>
+          <article class="service">
+            <span class="service-number">03 / CREATIVE</span>
+            <h3>Content Creation</h3>
+            <p>Social-first visual content designed to present your brand, product or personality in a memorable way.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <!-- Replace with your own portrait or behind-the-scenes photograph. -->
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=85" alt="Portrait placeholder for the 3Ger_films creator" />
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">Behind the camera</span>
+          <h2>Driven by stories. Focused on <span class="accent">the details.</span></h2>
+          <p>I'm Emmanuel Omowaye, the creative behind 3Ger_films. I work across videography and video editing, bringing ideas to life through thoughtful visuals and cinematic storytelling.</p>
+          <p>From planning and shooting to editing and delivery, my goal is to create work that feels intentional, looks polished and connects with the people watching.</p>
+          <div class="about-tags">
+            <span>Visual storytelling</span><span>Videography</span><span>Video editing</span><span>Creative direction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <span class="eyebrow">Have a project in mind?</span>
+            <h2>Let's create something <span class="accent">worth watching.</span></h2>
+            <p>Tell us what you're planning. Let's discuss the idea, the vision and how to bring it to life.</p>
+            <div class="contact-details">
+              <div><span>✦</span> Available for bookings</div>
+              <div><span>✦</span> Lagos, Nigeria · Available for travel</div>
+            </div>
+            <div class="about-tags" aria-label="Social media links">
+              <a href="https://www.instagram.com/3ger_films/" target="_blank" rel="noopener">Instagram ↗</a>
+              <a href="https://www.tiktok.com/@onlyone3ger" target="_blank" rel="noopener">TikTok ↗</a>
+              <a href="https://www.youtube.com/@3gerfilms" target="_blank" rel="noopener">YouTube ↗</a>
+              <a href="https://snapchat.com/t/HBXssDdY" target="_blank" rel="noopener">Snapchat ↗</a>
+              <a href="https://linktr.ee/Emmyomotola" target="_blank" rel="noopener">All links ↗</a>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/2349067689462?text=Hello%203Ger_films%2C%20I%27d%20like%20to%20discuss%20a%20project.">Chat on WhatsApp ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">3Ger<span>_films</span></div>
+      <div>© <span id="year"></span> 3Ger_films. All rights reserved.</div>
+      <div>Visual stories, thoughtfully made.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/2349067689462?text=Hello%203Ger_films%2C%20I%27d%20like%20to%20make%20an%20enquiry." aria-label="Chat with 3Ger_films on WhatsApp" target="_blank" rel="noopener">✆</a>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰";
       });
+    });
 
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => navLinks.classList.remove("open"));
-      });
-
-      document.querySelector(".contact-form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const button = this.querySelector("button");
-        button.textContent = "Message sent";
-        button.disabled = true;
-      });
-    </script>
-  </body>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
